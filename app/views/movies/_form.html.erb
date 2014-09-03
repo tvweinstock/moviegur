@@ -1,11 +1,20 @@
 <%= form_for @movie do |f| %>
 
-  <%= f.label :title %>
-  <%= f.text_field :title %>  
+<%= f.label :title %>
+<%= f.text_field :title %>  
 
-  <%= f.label :director %>
-  <%= f.text_field :director %> <br>
+<%= f.label :director %>
+<%= f.text_field :director %> <br>
 
-  <%= f.submit %>
+<%= f.label :actors %>
+<%= f.text_field :actors %> <br>
+
+<%= f.label :release_year %>
+<%= f.text_field :release_year %> <br>
+
+<%= f.label :duration %>
+<%= f.text_field :duration %> <br>
+
+<%= f.submit %>
 
 <% end -%>

@@ -4,18 +4,8 @@
 
 <!-- form_for is writing out all the html form info -->
 
-<%= form_for @movie do |f| %>
+<h1>New Movie</h1>
 
-  <%= f.label :title %>
-  <%= f.text_field :title %>  
+<%= render 'form' %>
 
-  <%= f.label :director %>
-  <%= f.text_field :director %> <br>
-
-  <%= f.label :actors %>
-  <%= f.text_field :actors %> <br>
-
-
-  <%= f.submit %>
-
-<% end -%>
+<%= link_to 'Back', movies_path %>
