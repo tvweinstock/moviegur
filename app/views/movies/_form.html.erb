@@ -1,5 +1,15 @@
 <%= form_for @movie do |f| %>
 
+  <% if @movie.errors.any? %>
+    <div class="error_explanation">
+      <p> <% @movie.errors.full_messages.each do |msg| %> 
+        <%= msg %>,
+      <% end -%>
+
+      please try again!</p> 
+    </div>
+  <% end -%>
+
 <%= f.label :title %>
 <%= f.text_field :title %>  
 
