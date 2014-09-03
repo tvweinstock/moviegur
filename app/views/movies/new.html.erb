@@ -1,0 +1,17 @@
+<!-- <# if @movie.errors %>
+  #show error messages
+<# end -%> -->
+
+<!-- form_for is writing out all the html form info -->
+
+<%= form_for @movie do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>  
+
+  <%= f.label :director %>
+  <%= f.text_field :director %> <br>
+
+  <%= f.submit %>
+
+<% end -%>
