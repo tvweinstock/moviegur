@@ -1,7 +1,13 @@
-<%= @movies.first.title %>
+<h1>Moviegur Magic</h1>
 
-<p><% @movies.each do |movie| %>
-</p>
-  <%= movie.title %>
+<ul>
+<% @movies.each do |movie| %>
+ <div><%= movie.title %></div>
+ <div><%= movie.director %></div>
+ <div><%= movie.actors %></div>
+ <div><%= movie.formatted_duration %></div>
+ <div><%= movie.release_year %></div>
 
   <% end -%>
+
+</ul>
