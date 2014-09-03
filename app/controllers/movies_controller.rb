@@ -1,10 +1,10 @@
 class MoviesController < ApplicationController
 
-  before_filter :load_movie, only: [:show, :edit, :update, :destroy]
-  before_filter :load_movie, :except => [:index, :new, :create]
-  before_filter :ensure_logged_in
+  # before_filter :load_movie, only: [:show, :edit, :update, :destroy] 
+  before_filter :load_movie, :except => [:index, :new, :create] 
+  before_filter :ensure_logged_in 
 
-  skip_before_filter :check_country, :except =>index
+  # skip_before_filter :check_country, :except =>index 
  # before_action  same as before_filter
 
   def index
@@ -45,7 +45,7 @@ class MoviesController < ApplicationController
 
   private
   def movie_params
-    params.require(:movie).permit(:title, :director)
+    params.require(:movie).permit(:title, :director, :actor)
   end
 
   def load_movie
