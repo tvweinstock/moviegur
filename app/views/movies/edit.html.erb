@@ -1,5 +1,7 @@
 <h1>Edit Your Moviegur Title</h1>
 
-<%= render "form" %>
+<%= render partial: "form", locals: { m: @movie_to_edit} %>
 
+
+<%= link_to 'Show', @movie_to_edit %>
 <%= link_to 'Back', movies_path %>

@@ -1,8 +1,8 @@
 class MoviesController < ApplicationController
 
-  # before_filter :load_movie, only: [:show, :edit, :update, :destroy] 
-  before_filter :load_movie, :except => [:index, :new, :create] 
-  before_filter :ensure_logged_in 
+  before_filter :load_movie, only: [:show, :edit, :update, :destroy] 
+  # before_filter :load_movie, :except => [:index, :new, :create] 
+  # before_filter :ensure_logged_in 
 
   # skip_before_filter :check_country, :except =>index 
  # before_action  same as before_filter
@@ -28,6 +28,7 @@ class MoviesController < ApplicationController
   end
 
   def edit
+    @movie_to_edit = Movie.find(params[:id])
   end
 
   def update
