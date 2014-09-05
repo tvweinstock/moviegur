@@ -22,5 +22,5 @@ test:
 
 production:
   adapter: postgresql
-  database: photogur
+  database: moviegur
   host: localhost
