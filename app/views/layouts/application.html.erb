@@ -1,93 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Moviegur" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "Moviegur" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "vendor/modernizr" %>
+  <%= csrf_meta_tags %>
 
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "application" %>
 
-       <nav class="top-bar" data-topbar>
-      <ul class="title-area">
-         
-        <li class="name">
-          <h1>
-            <a href="#">
-              Moviegur
-            </a>
-          </h1>
-        </li>
-        <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
-      </ul>
-    
-      <section class="top-bar-section">
-         
-        <ul class="right">
-          <li class="divider"></li>
-          
-          <li><a href="#">Main Item 1</a></li>
-          </li>
-          <li class="divider"></li>
-          <li><a href="#">Main Item 2</a></li>
-          <li class="divider"></li>
-          
-          <li><a href="#">Main Item 3</a></li>
-          </li>
-        </ul>
-      </section>
-    </nav>
-    
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
      
+      <li class="name">
+        <h1>
+          <a href="#">
+            Moviegur
+          </a>
+        </h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+    </ul>
     
-    <%= yield %>
-    
+    <section class="top-bar-section">
      
+      <ul class="right">
+        <li class="divider"></li>
+        
+        <li><a href="#">Main Item 1</a></li>
+      </li>
+      <li class="divider"></li>
+      <li><a href="#">Main Item 2</a></li>
+      <li class="divider"></li>
+      
+      <li><a href="#">Main Item 3</a></li>
+    </li>
+  </ul>
+</section>
+</nav>
+
+<% if flash[:notice] %>
+<p id="notice"><%= flash[:notice] %></p>
+<% end %>
+<% if flash[:alert] %>
+<p id="alert"><%= flash[:alert] %></p>
+<% end %>
+
+
+
+<%= yield %>
+
+
+
+<div class="row">
+  
+ 
+  <div class="large-9 columns">
     
-    <div class="row">
+    <h3>Sign up for Moviegur!</h3>
+    <p>Come join our thriving community of movie lovers!</p>
     
-       
-      <div class="large-9 columns">
-    
-        <h3>Sign up for Moviegur!</h3>
-        <p>Come join our thriving community of movie lovers!</p>
-    
-        <div class="section-container tabs" data-section>
-          <section class="section">
-            <h5 class="title"><a href="#panel1">New Member form</a></h5>
-            <div class="content" data-slug="panel1">
-              <form>
-                <div class="row collapse">
-                  <div class="large-2 columns">
-                    <label class="inline">Your Name</label>
-                  </div>
-                  <div class="large-10 columns">
-                    <input type="text" id="yourName" placeholder="Jane Smith">
-                  </div>
-                </div>
-                <div class="row collapse">
-                  <div class="large-2 columns">
-                    <label class="inline"> Your Email</label>
-                  </div>
-                  <div class="large-10 columns">
-                    <input type="text" id="yourEmail" placeholder="jane@smithco.com">
-                  </div>
-                </div>
-                <label>What do you love to watch?</label>
-                <textarea rows="4"></textarea>
-                <button type="submit" class="radius button">Submit</button>
-              </form>
+    <div class="section-container tabs" data-section>
+      <section class="section">
+        <h5 class="title"><a href="#panel1">New Member form</a></h5>
+        <div class="content" data-slug="panel1">
+          <form>
+            <div class="row collapse">
+              <div class="large-2 columns">
+                <label class="inline">Your Name</label>
+              </div>
+              <div class="large-10 columns">
+                <input type="text" id="yourName" placeholder="Jane Smith">
+              </div>
             </div>
-          </section>
-         </div>   
+            <div class="row collapse">
+              <div class="large-2 columns">
+                <label class="inline"> Your Email</label>
+              </div>
+              <div class="large-10 columns">
+                <input type="text" id="yourEmail" placeholder="jane@smithco.com">
+              </div>
+            </div>
+            <label>What do you love to watch?</label>
+            <textarea rows="4"></textarea>
+            <button type="submit" class="radius button">Submit</button>
+          </form>
+        </div>
+      </section>
+    </div>   
 
 
 
@@ -113,6 +120,6 @@
     </footer>
 
 
-      
+    
   </body>
-</html>
+  </html>
