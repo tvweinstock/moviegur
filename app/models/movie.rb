@@ -3,7 +3,9 @@ class Movie < ActiveRecord::Base
   validates :duration, numericality: {only_integer: true}
 
   has_many :reviews
+  has_many :cast_members
   has_many :users, through: :reviews
+
 
   def formatted_duration
     time_in_hours = duration.to_f / 60.0

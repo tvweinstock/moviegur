@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
 
+  resources :movies do 
+    resources :reviews, only: [:show, :create, :destroy]
+    resources :cast_members, only: [:show, :create, :destroy]
+  end
 
-  resources :movies # do
+   # do
   #   resources :reviews
   #   collection do 
   #     get 'search/:term' => 'movies#search', :as => :serch
@@ -14,6 +18,7 @@ Rails.application.routes.draw do
   # end
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

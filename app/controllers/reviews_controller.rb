@@ -26,7 +26,7 @@ class ReviewsController < ApplicationController
     params.require(:review).permit(:comment, :movie_id)
   end
 
-  def load_product
+  def load_movie
     @movie = Movie.find(params[:movie_id])
   end
 end
