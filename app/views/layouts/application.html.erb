@@ -18,7 +18,7 @@
 
   <nav class="top-bar" data-topbar>
     <ul class="title-area">
-     
+
       <li class="name">
         <h1>
           <a href="#">
@@ -30,16 +30,16 @@
     </ul>
     
     <section class="top-bar-section">
-     
+
       <ul class="right">
         <li class="divider"></li>
-        
+
         <li><a href="#">Main Item 1</a></li>
       </li>
       <li class="divider"></li>
       <li><a href="#">Main Item 2</a></li>
       <li class="divider"></li>
-      
+
       <li><a href="#">Main Item 3</a></li>
     </li>
   </ul>
@@ -57,13 +57,21 @@
 
 <%= yield %>
 
+    <p class="userinfo">
+      <% if current_user %>
+        Signed in as <%= current_user.email %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
+      <% else %>
+        <%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
+      <% end %>
+    </p>
+
 
 
 <div class="row">
-  
- 
+
+
   <div class="large-9 columns">
-    
+
     <h3>Sign up for Moviegur!</h3>
     <p>Come join our thriving community of movie lovers!</p>
     
@@ -120,6 +128,6 @@
     </footer>
 
 
-    
+
   </body>
   </html>
