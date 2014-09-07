@@ -3,8 +3,8 @@ class Movie < ActiveRecord::Base
   validates :duration, numericality: {only_integer: true}
 
   has_many :reviews
-  has_many :cast_members
   has_many :users, through: :reviews
+  has_many :cast_members 
 
 
   def formatted_duration

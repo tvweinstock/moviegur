@@ -1,2 +1,19 @@
-<h1>Reviews#show</h1>
-<p>Find me in app/views/reviews/show.html.erb</p>
+<p class="notice"></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @review.content %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @review.user %>
+</p>
+
+<p>
+  <strong>Movie:</strong>
+  <%= @review.movie %>
+</p>
+
+<%= link_to 'Back', review_path %>
+<%= link_to 'Edit', edit_review_path(@review) %>

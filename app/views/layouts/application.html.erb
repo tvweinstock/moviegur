@@ -20,11 +20,7 @@
     <ul class="title-area">
 
       <li class="name">
-        <h1>
-          <a href="#">
-            Moviegur
-          </a>
-        </h1>
+        <h1><%= link_to 'Moviegur', '/' %></h1>
       </li>
       <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
     </ul>
@@ -34,7 +30,7 @@
       <ul class="right">
         <li class="divider"></li>
 
-        <li><a href="#">Main Item 1</a></li>
+        <li><%= link_to 'New Movie', '/movies/new' %></li>
       </li>
       <li class="divider"></li>
       <li><a href="#">Main Item 2</a></li>
@@ -57,77 +53,20 @@
 
 <%= yield %>
 
-    <p class="userinfo">
-      <% if current_user %>
-        Signed in as <%= current_user.email %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
-      <% else %>
-        <%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
-      <% end %>
-    </p>
+<p class="userinfo">
+  <% if current_user %>
+  Signed in as <%= current_user.email %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
+  <% else %>
+  <p>   Already have an account? &raquo <%= link_to "Log in", new_session_path %> here or <%= link_to "Sign up", new_user_path %> </p>
 
-
-
-<div class="row">
-
-
-  <div class="large-9 columns">
-
-    <h3>Sign up for Moviegur!</h3>
-    <p>Come join our thriving community of movie lovers!</p>
-    
-    <div class="section-container tabs" data-section>
-      <section class="section">
-        <h5 class="title"><a href="#panel1">New Member form</a></h5>
-        <div class="content" data-slug="panel1">
-          <form>
-            <div class="row collapse">
-              <div class="large-2 columns">
-                <label class="inline">Your Name</label>
-              </div>
-              <div class="large-10 columns">
-                <input type="text" id="yourName" placeholder="Jane Smith">
-              </div>
-            </div>
-            <div class="row collapse">
-              <div class="large-2 columns">
-                <label class="inline"> Your Email</label>
-              </div>
-              <div class="large-10 columns">
-                <input type="text" id="yourEmail" placeholder="jane@smithco.com">
-              </div>
-            </div>
-            <label>What do you love to watch?</label>
-            <textarea rows="4"></textarea>
-            <button type="submit" class="radius button">Submit</button>
-          </form>
-        </div>
-      </section>
-    </div>   
+  <% end %>
+</p>
 
 
 
 
-    
-    <footer class="row">
-      <div class="large-12 columns">
-        <hr/>
-        <div class="row">
-          <div class="large-6 columns">
-            <p>© Copyright no one at all. Go to town.</p>
-          </div>
-          <div class="large-6 columns">
-            <ul class="inline-list right">
-              <li><a href="#">Link 1</a></li>
-              <li><a href="#">Link 2</a></li>
-              <li><a href="#">Link 3</a></li>
-              <li><a href="#">Link 4</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
 
 
 
-  </body>
-  </html>
+</body>
+</html>

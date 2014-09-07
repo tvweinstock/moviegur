@@ -1,4 +1,13 @@
- <div><%= movie.title %></div>
- <div><%= movie.director %></div>
- <div><%= movie.formatted_duration %></div>
- <div><%= movie.release_year %></div>
+<div class="row collapse">
+    <div class="large-4 columns">
+      <ul class="pricing-table left-side">
+        <li class="price"><%= movie.title %></li>
+        <li class="title"><%= movie.release_year %></li>
+        
+        <li class="bullet-item"><i class="foundicon-cloud"></i> Directed By: <%= movie.director %></li>
+        <li class="bullet-item"><i class="foundicon-address-book"></i> Length: <%= movie.formatted_duration %></li>
+        <li class="bullet-item"><i class="foundicon-address-book"></i> <%= link_to 'Show', movie %></li>
+        <li class="bullet-item"><i class="foundicon-address-book"></i> <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?'} %></li>
+      </ul>
+    </div>
+</div>

@@ -11,7 +11,10 @@ class MoviesController < ApplicationController
     @movies = Movie.all    
   end
 
-  def show    
+  def show   
+      if current_user
+      @review = @movie.reviews.build 
+    end
   end
 
   def new
