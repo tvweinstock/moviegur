@@ -1,2 +1,21 @@
-<h1>CastMembers#create</h1>
-<p>Find me in app/views/cast_members/create.html.erb</p>
+<h2>Add a Cast Member</h2>
+
+<%= form_for ([@cast_member, @cast_member.name.build]) do |f| %>
+
+<p>
+  <%= f.label :name %> <br>
+  <%= f.text_field :name %>
+</p>
+
+<p>
+  <%= f.label :role %>
+  <%= f.text_area :role %>
+</p>
+<p>
+<%= f.submit %>
+</p>
+<% end -%>
+
+
+<%= link_to 'Back', cast_member_path %>
+<%= link_to 'Edit', edit_cast_member_path(@cast_member) %>

@@ -14,6 +14,7 @@ class MoviesController < ApplicationController
   def show   
       if current_user
       @review = @movie.reviews.build 
+      @cast_member = @movie.cast_members.build 
     end
   end
 

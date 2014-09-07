@@ -1,3 +1,3 @@
 class CastMember < ActiveRecord::Base
-  belongs_to :movie
+  has_many :movies
 end

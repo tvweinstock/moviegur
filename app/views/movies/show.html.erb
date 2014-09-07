@@ -1,5 +1,12 @@
 <h1><%= @movie.title %></h1>
 
+  <p>Cast Members for <%= @movie.title %></p>
+
+  <% @movie.cast_members.each do |cast_member| %>
+    <p>
+    Actor: <%= cast_member.name %> Charcter: <%= cast_member.role %>
+    </p>
+  <% end %>
 
 
 <% if current_user %>
@@ -17,6 +24,8 @@
       <% end %>
     </p>
   <% end %>
+
+
 
   <h4>New Review</h4>
 
@@ -43,6 +52,41 @@
   <% end %>
 <% else %>
   <p>Please <%= link_to "log in", new_session_path %> to add a review.</p>
+<% end %>
+
+
+<% if current_user %>
+
+
+  <h4>Add a New Cast Member</h4>
+
+  <%= form_for([@movie, @cast_member]) do |f| %>
+    <% if @cast_member.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@cast_member.errors.count, "error") %> prohibited this cast member from being saved:</h2>
+
+        <ul>
+        <% @cast_member.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_area :name %>
+    </div>
+        <div class="field">
+      <%= f.label :role %><br />
+      <%= f.text_area :role %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+<% else %>
+  <p>Please <%= link_to "log in", new_session_path %> to add a cast member.</p>
 <% end %>
 
 <h4><%= link_to "Delete Title", movie_path(@movie), method: :delete %></h4>

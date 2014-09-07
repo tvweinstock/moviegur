@@ -1,13 +1,14 @@
 class CastMembersController < ApplicationController
   before_filter :load_movie
+  before_filter :ensure_logged_in, only: [:create, :destroy]
 
   def show
     @cast_member = CastMember.find(params[:id])
   end
 
   def create
-    @cast_member = @movie.cast_member.build(cast_member_params)
-    @cast_member.user = current_user
+    @cast_member = @movie.cast_members.build(cast_member_params)
+    
 
     if @cast_member.save
       redirect_to movies_path, notice: 'Cast Member Saved!'

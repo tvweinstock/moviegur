@@ -1,2 +1,19 @@
-<h1>CastMembers#show</h1>
-<p>Find me in app/views/cast_members/show.html.erb</p>
+<p class="notice"></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @cast_member.content %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @cast_member.user %>
+</p>
+
+<p>
+  <strong>Movie:</strong>
+  <%= @cast_member.movie %>
+</p>
+
+<%= link_to 'Back', cast_member_path %>
+<%= link_to 'Edit', edit_cast_member_path(@cast_member) %>
